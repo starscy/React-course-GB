@@ -6,7 +6,6 @@ import Input from "./components/UI/input/Input";
 
 function App() {
   const [messageList, setMessageList] = useState([]);
-
   const [title, setTitle] = useState("");
   const handleChange = (e) => {
     setTitle(e.target.value);
@@ -42,8 +41,8 @@ function App() {
           placeholder="Введите сообщение"
           onChange={handleChange}
         />
+        <Button onClick={postMessage}>Отправить</Button>
       </form>
-      <Button onClick={postMessage}>Отправить</Button>
     </div>
   );
 }
