@@ -44,11 +44,11 @@ function App() {
     setTimeout(() => console.log("robot answer"), 1500);
   }, [messageList]);
 
-  const chatArray = [
+  const [chatArray, setChatArray] = useState([
     { name: "chat-1", id: "chat1Id " },
     { name: "chat-2", id: "chat2Id " },
     { name: "chat-3", id: "chat3Id " },
-  ];
+  ]);
 
   return (
     <Container style={{ display: "flex", justifyContent: "space-between" }}>
