@@ -12,8 +12,16 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Profile from "./pages/Profile";
+import Chats from "./pages/Chats";
+
+import NotFoundPage from "./pages/NotFoundPage";
+import Layout from "./components/Layout";
 
 function App() {
+  /*
   const theme = createTheme({
     palette: {
       primary: {
@@ -49,9 +57,26 @@ function App() {
     { name: "chat-2", id: "chat2Id " },
     { name: "chat-3", id: "chat3Id " },
   ]);
+  */
 
   return (
-    <Container style={{ display: "flex", justifyContent: "space-between" }}>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="chats" element={<Chats />} />
+          <Route path="chats/:id" element={<Chats />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </>
+  );
+}
+
+export default App;
+/* 
+  <Container style={{ display: "flex", justifyContent: "space-between" }}>
       <ThemeProvider theme={theme}>
         <MyList />
         <div>
@@ -73,14 +98,12 @@ function App() {
               onChange={handleChange}
             />
 
-            <Button variant="contained" onClick={postMessage}>
+            <MyButton variant="contained" onClick={postMessage}>
               Отправить
-            </Button>
+            </MyButton>
           </FormControl>
         </div>
       </ThemeProvider>
     </Container>
-  );
-}
 
-export default App;
+*/
