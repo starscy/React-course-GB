@@ -7,7 +7,7 @@ import MyLink from "../components/UI/link/MyLink";
 import MessagesList from "../components/MessagesList";
 import { FaTimesCircle } from "react-icons/fa";
 
-const initialChats = [
+const initChats = [
   {
     name: "Chat-1",
     messages: [{ text: "FirstMessageCHat1", author: "AUTHOR -1" }],
@@ -30,7 +30,7 @@ const initialChats = [
   },
 ];
 const Chats = () => {
-  const [chats, setChats] = useState(initialChats);
+  const [chats, setChats] = useState(initChats);
   const { id } = useParams();
 
   const createChat = () => {
@@ -42,7 +42,7 @@ const Chats = () => {
         id: `${chats.length}${Date.now()}`,
       },
     ]);
-    initialChats.push({
+    initChats.push({
       name: `Chat-${chats.length + 1}`,
       messages: [{ text: "", author: "" }],
       id: `${chats.length}${Date.now()}`,

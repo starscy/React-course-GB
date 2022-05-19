@@ -18,7 +18,7 @@ const Chat = ({ chats, chatId, setChats }) => {
   };
   //setFilterChats(chats.filter((chat) => chat.id == chatId));
   let filterChats = chats.filter((chat) => chat.id == chatId);
-  let messageList = "";
+  let messageList = [];
   if (filterChats.length !== 0) {
     messageList = filterChats[0].messages;
   }
