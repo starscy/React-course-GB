@@ -17,6 +17,9 @@ const Layout = () => {
         <MyLink className={setActive} to="/chats">
           Chats
         </MyLink>
+        <MyLink className={setActive} to="/counter">
+          Counter
+        </MyLink>
       </header>
       <main>
         <Outlet />
