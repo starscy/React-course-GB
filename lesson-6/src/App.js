@@ -19,6 +19,7 @@ import Chats from "./pages/Chats";
 import NotFoundPage from "./pages/NotFoundPage";
 import Layout from "./components/Layout";
 import Counter from "./pages/Counter";
+import Chat from "./components/Chat";
 
 function App() {
   /*
