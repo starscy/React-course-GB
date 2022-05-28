@@ -1,9 +1,9 @@
-import { ADD_CHAT, DELETE_CHAT } from "../actionType";
+import { ADD_CHAT, DELETE_CHAT } from "../../actions/actionType";
 
 const initialState = {
   chats: [
     {
-      name: "Chat-1",
+      name: "Chat with robot",
 
       id: 11,
     },

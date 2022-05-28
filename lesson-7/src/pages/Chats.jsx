@@ -9,16 +9,18 @@ import { FaTimesCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import ChatAddForm from "../components/ChatAddForm";
 import MyModal from "../components/UI/modal/MyModal";
+import { DELETE_CHAT } from "../redux/actions/actionType";
+import { chatSelector } from "../redux/reducers/chatReducer/selectors";
+import { deleteChat } from "../redux/actions/actions";
 
 const Chats = () => {
-  const dispatch = useDispatch();
   const chats = useSelector((state) => state.chats.chats);
-
+  const dispatch = useDispatch();
   const [modal, setModal] = useState(false);
   const { id } = useParams();
 
-  const deleteChat = (chatId) => {
-    dispatch({ type: "DELETE_CHAT", payload: chatId });
+  const deleteThisChat = (chatId) => {
+    dispatch(deleteChat(chatId));
   };
 
   return (
@@ -31,7 +33,7 @@ const Chats = () => {
             </MyLink>
             <MyButton
               onClick={() => {
-                deleteChat(chat.id);
+                deleteThisChat(chat.id);
               }}
             >
               <FaTimesCircle />
