@@ -11,7 +11,6 @@ const MessagesList = ({ messages, titleChat, chats }) => {
     setMessageList([...messageList]);
   }, [...messages]);
 
-  console.log(messageList, ` messageLIst`);
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
@@ -34,7 +33,7 @@ const MessagesList = ({ messages, titleChat, chats }) => {
   };
 
   useEffect(() => {
-    setTimeout(() => console.log("Ответ от робота "), 1500);
+    setTimeout(() => console.log("Ответ от робота "), 1000);
   }, [messageList]);
 
   return (
