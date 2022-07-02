@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addChat } from "../redux/actions/actions";
 import MyButton from "./UI/button/MyButton";
 import MyInput from "./UI/input/MyInput";
 
@@ -11,23 +12,23 @@ const ChatAddForm = ({ setModal }) => {
   const handleChange = (e) => {
     setName(e.target.value);
   };
-  const addChat = () => {
+  const addThisChat = () => {
     setName("");
+
     const randomId = Date.now();
     const createdChat = {
       id: randomId,
       name: name,
-      messages: [{ text: "", author: "" }],
+      messages: { [`${randomId}`]: [{ text: "", author: "" }] },
     };
-    dispatch({ type: "ADD_CHAT", payload: createdChat });
-
+    dispatch(addChat(createdChat));
     setModal(false);
   };
 
   return (
     <div>
       <MyInput value={name} onChange={handleChange} />
-      <MyButton onClick={addChat}>Добавить чат</MyButton>
+      <MyButton onClick={addThisChat}>Добавить чат</MyButton>
     </div>
   );
 };
