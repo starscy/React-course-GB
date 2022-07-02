@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import MyButton from "../components/UI/button/MyButton";
 import { useParams } from "react-router-dom";
 import MyLink from "../components/UI/link/MyLink";
-import MessagesList from "../components/MessagesList";
+
 import { FaTimesCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import ChatAddForm from "../components/ChatAddForm";
 import MyModal from "../components/UI/modal/MyModal";
-import { DELETE_CHAT } from "../redux/actions/actionType";
-import { chatSelector } from "../redux/reducers/chatReducer/selectors";
+
 import { deleteChat } from "../redux/actions/actions";
 
 const Chats = () => {

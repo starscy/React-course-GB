@@ -20,6 +20,9 @@ const Layout = () => {
         <MyLink className={setActive} to="/counter">
           Counter
         </MyLink>
+        <MyLink className={setActive} to="/api">
+          API
+        </MyLink>
       </header>
       <main>
         <Outlet />

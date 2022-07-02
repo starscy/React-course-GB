@@ -9,6 +9,8 @@ import rootSaga from "./reducers/saga";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
+import { apiReducer } from "./reducers/apiReducer";
+import { countReducer } from "./reducers/countReducer";
 
 const persistConfig = {
   key: "root",
@@ -18,6 +20,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
   chats: chatReducer,
   messages: messageReducer,
+  users: apiReducer,
+  count: countReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
