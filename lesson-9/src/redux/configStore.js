@@ -11,6 +11,7 @@ import { persistReducer } from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
 import { apiReducer } from "./reducers/apiReducer";
 import { countReducer } from "./reducers/countReducer";
+import { registerReducer } from "./reducers/registerReducer";
 
 const persistConfig = {
   key: "root",
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   messages: messageReducer,
   users: apiReducer,
   count: countReducer,
+  currentUser: registerReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

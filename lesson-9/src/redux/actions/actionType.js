@@ -12,3 +12,15 @@ export const SHOW_LOADER = "SHOW_LOADER";
 export const HIDE_LOADER = "HIDE_LOADER";
 export const SHOW_ERROR = "SHOW_ERROR";
 export const HIDE_ERROR = "HIDE_ERROR";
+
+export const REGISTER_START = "REGISTER_START";
+export const REGISTER_SUCCES = "REGISTER_SUCCES";
+export const REGISTER_ERROR = "REGISTER_ERROR";
+
+export const LOGIN_START = "REGISTER_START";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_ERROR = "LOGIN_ERROR";
+
+export const LOGOUT_START = "LOGOUT_START";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT_ERROR = "LOGOUT_ERROR";
